@@ -1,0 +1,58 @@
+ 
+    {% extends "layout.html" %}
+   
+    {% block content %}
+    <!-- <h2>{{ title }}</h2> -->
+
+    <div class="container">
+        <form name="register" action="" method="post" novalidate>
+        <fieldset class="form-group">
+            <legend>{{ title }}</legend>
+            {{ formx.hidden_tag() }}
+                <p>
+                    {{ formx.email.label }}<br>
+                    {{ formx.email }}
+                    {% for error in formx.email.errors %}
+                    <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+
+                <p>
+                    {{ formx.password.label }}<br>
+                    {{ formx.password }}
+                    {% for error in formx.password.errors %}
+                    <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+
+                <p>
+                    {{ formx.password_confirm.label }}<br>
+                    {{ formx.password_confirm }}
+                    {% for error in formx.password_confirm.errors %}
+                    <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+
+                <p>
+                    {{ formx.first_name.label }}<br>
+                    {{ formx.first_name }}
+                    {% for error in formx.first_name.errors %}
+                    <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+
+                <p>
+                    {{ formx.last_name.label }}<br>
+                    {{ formx.last_name }}
+                    {% for error in formx.last_name.errors %}
+                    <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ formx.submit() }}
+                </p>
+
+        </fieldset>  
+        </form>
+    </div>
+    {% endblock %}
